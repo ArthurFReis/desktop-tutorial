@@ -1,0 +1,90 @@
+import { test, expect } from '@playwright/test';
+
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://www.saucedemo.com/');
+  });
+
+   test('Teste de preenchimento correto', async ({ page }) => {
+         const usuario =  page.getByPlaceholder("Username");
+         await usuario.fill("standard_user")
+         await expect(usuario).toHaveValue('standard_user');
+          
+  });
+
+  test('Teste de preenchimento errado', async ({ page }) => {
+         const usuario =  page.getByPlaceholder("Username");
+         await usuario.fill("standard_user")
+         await expect(usuario).toHaveValue('standard'); 
+  });
+
+  test.describe('login',() => {
+
+    test('Login com sucesso', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill("standard_user");
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+  });
+
+  test('Login erro no usuário', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_user1');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+     
+  });
+
+  test('Login erro na senha', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_user');
+     await page.getByPlaceholder('Password').fill('secret_sauce1');
+     await page.getByRole("button").click(); 
+  });
+
+  test('Username locked_out_user', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('locked_out_user');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+  });
+
+  test('Username problem_user', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('problem_user');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+  });
+
+  test('Username performance_glitch_user', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('performance_glitch_user');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+  });
+
+  test('Username error_user', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('error_user');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+  });
+
+   test('Username visual_user', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('visual_user');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+  });
+
+   test('Logout', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill("standard_user");
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+     await page.locator("#react-burger-menu-btn").click();
+     await page.locator("#logout_sidebar_link").click();
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
