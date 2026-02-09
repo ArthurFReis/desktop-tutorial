@@ -2,7 +2,7 @@ Esse projeto foi utilizado a ferramenta playwright.
 
 Como executar os testes:
  -> Pode ser pelo próprio VScode com o incone de "Play" no lado de cada função ou atráves da extesão testing
- -> cmandos no cmd tais como:
+ -> comandos no cmd tais como:
 
    - npx playwright test
    - npx playwright show-report
