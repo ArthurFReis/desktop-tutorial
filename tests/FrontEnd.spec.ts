@@ -16,8 +16,9 @@ import { test, expect } from '@playwright/test';
   test('Teste de preenchimento errado', async ({ page }) => {
          const usuario =  page.getByPlaceholder("Username");
          await usuario.fill("standard_user")
-         await expect(usuario).toHaveValue('standard'); 
          await page.screenshot({path: "Evidencias/preenchimentoErrado.png"});
+         await expect(usuario).toHaveValue('standard'); 
+         
   });
 
   test.describe('login',() => {
