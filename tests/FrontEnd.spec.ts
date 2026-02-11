@@ -5,8 +5,6 @@ import { test, expect } from '@playwright/test';
     await page.goto('https://www.saucedemo.com/');
   });
 
- 
-
   test.describe('login',() => {
 
      test('Teste de preenchimento correto', async ({ page }) => {
@@ -32,24 +30,77 @@ import { test, expect } from '@playwright/test';
      await page.screenshot({path: "Evidencias/preenchimentoCorretoTotal.png"});
   });
 
-  test('Login erro no usuário', async ({ page }) => {
+  test('Login erro no usuário 1', async ({ page }) => {
      await page.getByPlaceholder("Username").fill('standard_user1');
-     await page.screenshot({path: "Evidencias/usuarioErro1.png"});
-     await page.getByPlaceholder("Username_us").fill('');
-     await page.screenshot({path: "Evidencias/usuarioErro2.png"});
-     await page.getByPlaceholder("Username").fill('standard_use');
-     await page.screenshot({path: "Evidencias/usuarioErro3.png"});
      await page.getByPlaceholder('Password').fill('secret_sauce');
      await page.getByRole("button").click(); 
-     
-     
+     await page.screenshot({path: "Evidencias/usuarioErro1.png"});
+      await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear(); 
+  });
+
+  test('Login erro no usuário 2', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_users');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+     await page.screenshot({path: "Evidencias/usuarioErro2.png"});
+      await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear(); 
+  });
+
+  test('Login erro no usuário 3', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_us');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+     await page.screenshot({path: "Evidencias/usuarioErro3.png"});
+      await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear(); 
+  });
+
+  test('Login erro no usuário 4', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('');
+     await page.getByPlaceholder('Password').fill('secret_sauce');
+     await page.getByRole("button").click(); 
+     await page.screenshot({path: "Evidencias/usuarioErro4.png"});
+     await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear(); 
   });
 
   test('Login erro na senha', async ({ page }) => {
      await page.getByPlaceholder("Username").fill('standard_user');
      await page.getByPlaceholder('Password').fill('secret_sauce1');
      await page.getByRole("button").click();
-     await page.screenshot({path: "Evidencias/senhaErro.png"}); 
+     await page.screenshot({path: "Evidencias/senhaErro1.png"});
+     await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear();
+     await page.screenshot({path: "Evidencias/senhaUsuarioLimpos.png"});
+  });
+
+  test('Login erro na senha 2', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_user');
+     await page.getByPlaceholder('Password').fill('secret_saucer');
+     await page.getByRole("button").click();
+     await page.screenshot({path: "Evidencias/senhaErro2.png"});
+     await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear();
+  });
+
+  test('Login erro na senha 3', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_user');
+     await page.getByPlaceholder('Password').fill('secret');
+     await page.getByRole("button").click();
+     await page.screenshot({path: "Evidencias/senhaErro3.png"});
+     await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear();
+  });
+
+  test('Login erro na senha 4', async ({ page }) => {
+     await page.getByPlaceholder("Username").fill('standard_user');
+     await page.getByPlaceholder('Password').fill('');
+     await page.getByRole("button").click();
+     await page.screenshot({path: "Evidencias/senhaErro4.png"});
+     await page.getByPlaceholder("Username").clear();
+     await page.getByPlaceholder('Password').clear();
   });
 
   test('Username locked_out_user', async ({ page }) => {
