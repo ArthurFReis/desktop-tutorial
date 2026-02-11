@@ -8,6 +8,7 @@ test.describe.parallel("API com paralelo", () => {
     test("Bancos em geral", async({request, page}) => {
         const response = await request.get(`${site}/banks/v1`);
         expect(response.status()).toBe(200);
+        console.log(response.text());
         
     });
 
@@ -26,8 +27,8 @@ test.describe.parallel("API com paralelo", () => {
         const response = await request.get(`${site}/cep/v1/89010025`);
         expect(response.status()).toBe(200);
         const responsebody = JSON.parse(await response.text());
-        const resposta = console.log(responsebody);
-    
+        console.log(responsebody);
+
     });
 });
 
@@ -57,8 +58,7 @@ test.describe("API sem paralelo", () => {
         const response = await request.get(`${site}/cep/v1/89010025`);
         expect(response.status()).toBe(200);
         const responsebody = JSON.parse(await response.text());
-        const resposta = console.log(responsebody);
-    
+        console.log(responsebody);
     });
 });
  
