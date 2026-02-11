@@ -66,7 +66,7 @@ import { test, expect } from '@playwright/test';
      await page.getByPlaceholder('Password').clear(); 
   });
 
-  test('Login erro na senha', async ({ page }) => {
+  test('Login erro na senha 1', async ({ page }) => {
      await page.getByPlaceholder("Username").fill('standard_user');
      await page.getByPlaceholder('Password').fill('secret_sauce1');
      await page.getByRole("button").click();
