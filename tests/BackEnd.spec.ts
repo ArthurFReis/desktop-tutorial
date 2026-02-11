@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel("API", () => {
+test.describe.parallel("API com paralelo", () => {
      
     const site = 'https://brasilapi.com.br/api'
 
