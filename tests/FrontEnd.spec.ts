@@ -5,7 +5,11 @@ import { test, expect } from '@playwright/test';
     await page.goto('https://www.saucedemo.com/');
   });
 
-   test('Teste de preenchimento correto', async ({ page }) => {
+ 
+
+  test.describe('login',() => {
+
+     test('Teste de preenchimento correto', async ({ page }) => {
          const usuario =  page.getByPlaceholder("Username");
          await usuario.fill("standard_user")
          await expect(usuario).toHaveValue('standard_user');
@@ -21,8 +25,6 @@ import { test, expect } from '@playwright/test';
          
   });
 
-  test.describe('login',() => {
-
     test('Login com sucesso', async ({ page }) => {
      await page.getByPlaceholder("Username").fill("standard_user");
      await page.getByPlaceholder('Password').fill('secret_sauce');
@@ -32,9 +34,14 @@ import { test, expect } from '@playwright/test';
 
   test('Login erro no usuário', async ({ page }) => {
      await page.getByPlaceholder("Username").fill('standard_user1');
+     await page.screenshot({path: "Evidencias/usuarioErro1.png"});
+     await page.getByPlaceholder("Username_us").fill('');
+     await page.screenshot({path: "Evidencias/usuarioErro2.png"});
+     await page.getByPlaceholder("Username").fill('standard_use');
+     await page.screenshot({path: "Evidencias/usuarioErro3.png"});
      await page.getByPlaceholder('Password').fill('secret_sauce');
      await page.getByRole("button").click(); 
-     await page.screenshot({path: "Evidencias/usuarioErro.png"});
+     
      
   });
 

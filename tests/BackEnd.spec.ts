@@ -27,7 +27,8 @@ test.describe.parallel("API", () => {
         expect(response.status()).toBe(200);
 
         const responsebody = JSON.parse(await response.text());
-        console.log(responsebody);
+        const resposta = console.log(responsebody);
+    
     });
 });
  
