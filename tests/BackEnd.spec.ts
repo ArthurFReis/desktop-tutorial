@@ -25,7 +25,6 @@ test.describe.parallel("API", () => {
     test("Cep = 89010025 e mostrar o resultado do corpo do JSON", async({request, page}) => {
         const response = await request.get(`${site}/cep/v1/89010025`);
         expect(response.status()).toBe(200);
-
         const responsebody = JSON.parse(await response.text());
         const resposta = console.log(responsebody);
     
