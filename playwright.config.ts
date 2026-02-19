@@ -14,7 +14,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
  
   retries: 1,
-  reporter: 'html',
+  reporter: [['html'], ['junit', {outputFile: 'results.xml'}]],
   fullyParallel: true,
   
   use: {

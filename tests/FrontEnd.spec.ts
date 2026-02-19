@@ -37,7 +37,7 @@ import { test, expect } from '@playwright/test';
      await page.screenshot({path: "Evidencias/usuarioErroClean1.png"});
      await page.getByPlaceholder("Username").clear();
      await page.getByPlaceholder('Password').clear();
-      await page.screenshot({path: "Evidencias/usuarioErroClean2.png"});
+     await page.screenshot({path: "Evidencias/usuarioErroClean2.png"});
      await page.getByPlaceholder("Username").fill('standard_user12');
      await page.getByPlaceholder('Password').fill('secret_sauce');
      await page.getByRole("button").click(); 
@@ -186,7 +186,7 @@ test.describe('login sem paralelo',() => {
      await page.screenshot({path: "Evidencias/usuarioErroClean1.png"});
      await page.getByPlaceholder("Username").clear();
      await page.getByPlaceholder('Password').clear();
-      await page.screenshot({path: "Evidencias/usuarioErroClean2.png"});
+     await page.screenshot({path: "Evidencias/usuarioErroClean2.png"});
      await page.getByPlaceholder("Username").fill('standard_user12');
      await page.getByPlaceholder('Password').fill('secret_sauce');
      await page.getByRole("button").click(); 
