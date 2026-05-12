@@ -114,7 +114,7 @@ test.describe.parallel('Login', () => {
      let navigationPage = new NavegationPage(page);
   
      for(let i = 0; i < tiposUsuarios.length; i++){
-      
+
       switch (tiposUsuarios[i]) {
          case 1:
             await page.fill('input[placeholder="Username"]', 'locked_out_user');
@@ -169,15 +169,13 @@ test.describe.parallel('Login', () => {
   });
 
      test('Logout', async ({ page }) => {
-     await page.getByPlaceholder("Username").fill("standard_user");
-     await page.getByPlaceholder('Password').fill('secret_sauce');
-     await page.getByRole("button").click(); 
-     await page.locator("#react-burger-menu-btn").click();
+     await page.fill('input[placeholder="Username"]', 'standard_user');
+     await page.fill('input[placeholder="Password"]', 'secret_sauce');
+     await page.click('#login-button'); 
+     await page.click('#react-burger-menu-btn');
      await page.screenshot({path: "Evidencias/login/loginout/logoutBurger.png"});
-     await page.locator("#logout_sidebar_link").click();
+     await page.click('#logout_sidebar_link');
      await page.screenshot({path: "Evidencias/login/loginout/logout.png"});
   });
-
-
 
 });
