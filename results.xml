@@ -1,18 +1,31 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.876468999999576">
-<testsuite name="tests\BackEnd.spec.ts" timestamp="2026-05-12T11:18:34.503Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.385" errors="0">
-<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEnd.spec.ts" time="1.385">
+<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="5.646804000000469">
+<testsuite name="tests\BackEnd.spec.ts" timestamp="2026-05-12T11:22:50.230Z" hostname="chromium" tests="2" failures="1" skipped="0" time="2.09" errors="0">
+<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEnd.spec.ts" time="1.281">
 <system-out>
 <![CDATA[[33m200[39m
-{
-  cep: [32m'89010025'[39m,
-  state: [32m'SC'[39m,
-  city: [32m'Blumenau'[39m,
-  neighborhood: [32m'Centro'[39m,
-  street: [32m'Rua Doutor Luiz de Freitas Melro'[39m,
-  service: [32m'open-cep'[39m
-}
+Tipo de teste inválido!
 ]]>
 </system-out>
+</testcase>
+<testcase name="API com paralelo › Bancos em geral a validação errada" classname="tests\BackEnd.spec.ts" time="0.809">
+<failure message="BackEnd.spec.ts:39:9 Bancos em geral a validação errada" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEnd.spec.ts:39:9 › API com paralelo › Bancos em geral a validação errada ──
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      40 |         const site = 'https://brasilapi.com.br/api';
+      41 |         const response = await request.get(`${site}/banks/v1`);
+    > 42 |         expect(response.status()).toBe(400);
+         |                                   ^
+      43 |     });
+      44 |
+      45 | });
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEnd.spec.ts:42:35
+]]>
+</failure>
 </testcase>
 </testsuite>
 </testsuites>
