@@ -9,11 +9,12 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe.parallel('Login', () => {
-  test('login responsivo', async ({ page }) => {
+  /*test('login responsivo', async ({ page }) => {
         await pageResponsivoLogin(page);
-    });
+    }); */
 
   test('Teste de preenchimento correto', async ({ page }) => {
+     await pageResponsivoLogin(page);
      await page.fill('input[placeholder="Username"]', 'standard_user');
      await page.fill('input[placeholder="Password"]', 'secret_sauce');
      if ((await page.getByRole('button').isVisible()) && (await page.getByRole('button').isEnabled())) {
@@ -25,6 +26,7 @@ test.describe.parallel('Login', () => {
       console.log("O botão de login não está visível! \n");
      }
      
+     await pageResponsivoLogin(page);
   });
 
 
