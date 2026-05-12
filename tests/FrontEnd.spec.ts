@@ -9,9 +9,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe.parallel('Login', () => {
-  /*test('login responsivo', async ({ page }) => {
-        await pageResponsivoLogin(page);
-    }); */
+  
 
   test('Teste de preenchimento correto', async ({ page }) => {
      await pageResponsivoLogin(page);
@@ -110,58 +108,65 @@ test.describe.parallel('Login', () => {
       console.log("Começa os tipos de login! \n");
   });
 
-    test('Login tipos de usuário - locked_out_user', async ({ page }) => {
-     await page.fill('input[placeholder="Username"]', 'locked_out_user');
-     await page.fill('input[placeholder="Password"]', 'secret_sauce');
-     await page.click('#login-button');
-     let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-     console.log('Erro do usuário locked_out_user: ' + erroMessage);
-     await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioLockedOut.png"});
-     
+    test('Login tipos de usuário', async ({ page }) => {
+    
+     let tiposUsuarios = [1, 2, 3, 4, 5];
+     let navigationPage = new NavegationPage(page);
+  
+     for(let i = 0; i < tiposUsuarios.length; i++){
+      
+      switch (tiposUsuarios[i]) {
+         case 1:
+            await page.fill('input[placeholder="Username"]', 'locked_out_user');
+            await page.fill('input[placeholder="Password"]', 'secret_sauce');
+            await page.click('#login-button');
+            let erroMessage = await page.locator('h3[data-test="error"]').innerText();
+            console.log('Erro do usuário locked_out_user: ' + erroMessage);
+            await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioLockedOut.png"});
+            break;
+         case 2:
+            await page.fill('input[placeholder="Username"]', 'problem_user');
+            await page.fill('input[placeholder="Password"]', 'secret_sauce');
+            await page.click('#login-button');
+            //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
+            //console.log('Erro do usuário problem_user: ' + erroMessage);
+            await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png"});
+            await navigationPage.saucedemo();
+             break;
+         case 3:
+            await page.fill('input[placeholder="Username"]', 'performance_glitch_user');
+            await page.fill('input[placeholder="Password"]', 'secret_sauce');
+            await page.click('#login-button');
+            //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
+            //console.log('Erro do usuário performance_glitch_user: ' + erroMessage);
+            await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioPerformanceGlitch.png"});
+            await navigationPage.saucedemo();
+             break;
+         case 4:
+            await page.fill('input[placeholder="Username"]', 'error_user');
+            await page.fill('input[placeholder="Password"]', 'secret_sauce');
+            await page.click('#login-button');
+            //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
+           // console.log('Erro do usuário error_user: ' + erroMessage);
+            await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioError.png"});
+            await navigationPage.saucedemo();
+             break;
+         case 5:
+            await page.fill('input[placeholder="Username"]', 'visual_user');
+            await page.fill('input[placeholder="Password"]', 'secret_sauce');
+            await page.click('#login-button');
+            //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
+           // console.log('Erro do usuário visual_user: ' + erroMessage);
+            await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioVisual.png"}); 
+            await navigationPage.saucedemo();  
+            break;
+
+            default:
+                    console.log('O tipo de usuário não existe! \n');
+      }
+
+    } 
   });
-
-  test('Login tipos de usuário - problem_user', async ({ page }) => {
-     await page.fill('input[placeholder="Username"]', 'problem_user');
-     await page.fill('input[placeholder="Password"]', 'secret_sauce');
-     await page.click('#login-button');
-     //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-     //console.log('Erro do usuário problem_user: ' + erroMessage);
-     await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png"});
-     
-  });
-
-  test('Login tipos de usuário - performance_glitch_user', async ({ page }) => {
-     await page.fill('input[placeholder="Username"]', 'performance_glitch_user');
-     await page.fill('input[placeholder="Password"]', 'secret_sauce');
-     await page.click('#login-button');
-     //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-     //console.log('Erro do usuário performance_glitch_user: ' + erroMessage);
-     await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioPerformanceGlitch.png"});
-     
-  });
-
-  test('Login tipos de usuário - error_user', async ({ page }) => {
-     await page.fill('input[placeholder="Username"]', 'error_user');
-     await page.fill('input[placeholder="Password"]', 'secret_sauce');
-     await page.click('#login-button');
-     //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-    // console.log('Erro do usuário error_user: ' + erroMessage);
-     await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioError.png"});
-     
-  });
-
-  test('Login tipos de usuário - visual_user', async ({ page }) => {
-     await page.fill('input[placeholder="Username"]', 'visual_user');
-     await page.fill('input[placeholder="Password"]', 'secret_sauce');
-     await page.click('#login-button');
-     //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-    // console.log('Erro do usuário visual_user: ' + erroMessage);
-     await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioVisual.png"});
-     
-  });
-
-
-
 
      test('Logout', async ({ page }) => {
      await page.getByPlaceholder("Username").fill("standard_user");

@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="6.0765570000000295">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-12T09:43:14.225Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.591" errors="0">
-<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="2.591">
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="23.884628000000493">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-12T10:46:46.600Z" hostname="chromium" tests="7" failures="0" skipped="0" time="20.176" errors="0">
+<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="4.769">
 <system-out>
 <![CDATA[É responsivo! 
 
@@ -36,6 +36,54 @@
 
 ]]>
 </system-out>
+</testcase>
+<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="2.105">
+<system-out>
+<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Username is required
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste usuarios testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.558">
+<system-out>
+<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
+Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
+Erros do método refresh da página: Epic sadface: Username is required
+======================================================================================================================== 
+
+Começa os erros do password! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste  password testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.367">
+<system-out>
+<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Password is required
+Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste password testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.474">
+<system-out>
+<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
+Erros do método refresh da página: Epic sadface: Password is required
+Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
+======================================================================================================================== 
+
+Começa os tipos de login! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="7.177">
+<system-out>
+<![CDATA[Erro do usuário locked_out_user: Epic sadface: Sorry, this user has been locked out.
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Logout" classname="tests\FrontEnd.spec.ts" time="1.726">
 </testcase>
 </testsuite>
 </testsuites>
