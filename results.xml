@@ -1,31 +1,20 @@
-<testsuites id="" name="" tests="2" failures="1" skipped="0" errors="0" time="5.646804000000469">
-<testsuite name="tests\BackEnd.spec.ts" timestamp="2026-05-12T11:22:50.230Z" hostname="chromium" tests="2" failures="1" skipped="0" time="2.09" errors="0">
-<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEnd.spec.ts" time="1.281">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="32.167656000000015">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-13T10:16:51.292Z" hostname="chromium" tests="1" failures="0" skipped="0" time="29.143" errors="0">
+<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="29.143">
 <system-out>
-<![CDATA[[33m200[39m
-Tipo de teste inválido!
+<![CDATA[Erro do usuário locked_out_user: Epic sadface: Sorry, this user has been locked out.
+Tipo usuário 1 testado! 
+
+Tipo usuário 2 testado! 
+
+Tipo usuário 3 testado! 
+
+Tipo usuário 4 testado! 
+
+Tipo usuário 5 testado! 
+
 ]]>
 </system-out>
-</testcase>
-<testcase name="API com paralelo › Bancos em geral a validação errada" classname="tests\BackEnd.spec.ts" time="0.809">
-<failure message="BackEnd.spec.ts:39:9 Bancos em geral a validação errada" type="FAILURE">
-<![CDATA[  [chromium] › tests\BackEnd.spec.ts:39:9 › API com paralelo › Bancos em geral a validação errada ──
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 400
-    Received: 200
-
-      40 |         const site = 'https://brasilapi.com.br/api';
-      41 |         const response = await request.get(`${site}/banks/v1`);
-    > 42 |         expect(response.status()).toBe(400);
-         |                                   ^
-      43 |     });
-      44 |
-      45 | });
-        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEnd.spec.ts:42:35
-]]>
-</failure>
 </testcase>
 </testsuite>
 </testsuites>

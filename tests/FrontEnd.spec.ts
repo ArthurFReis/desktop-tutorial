@@ -120,6 +120,7 @@ test.describe.parallel('Login', () => {
             let erroMessage = await page.locator('h3[data-test="error"]').innerText();
             console.log('Erro do usuário locked_out_user: ' + erroMessage);
             await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioLockedOut.png"});
+            console.log("Tipo usuário 1 testado! \n");
             break;
          case 2:
             await page.fill('input[placeholder="Username"]', 'problem_user');
@@ -128,6 +129,7 @@ test.describe.parallel('Login', () => {
             //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
             //console.log('Erro do usuário problem_user: ' + erroMessage);
             await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png"});
+            console.log("Tipo usuário 2 testado! \n");
             await navigationPage.saucedemo();
              break;
          case 3:
@@ -137,6 +139,7 @@ test.describe.parallel('Login', () => {
             //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
             //console.log('Erro do usuário performance_glitch_user: ' + erroMessage);
             await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioPerformanceGlitch.png"});
+            console.log("Tipo usuário 3 testado! \n");
             await navigationPage.saucedemo();
              break;
          case 4:
@@ -146,6 +149,7 @@ test.describe.parallel('Login', () => {
             //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
            // console.log('Erro do usuário error_user: ' + erroMessage);
             await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioError.png"});
+            console.log("Tipo usuário 4 testado! \n");
             await navigationPage.saucedemo();
              break;
          case 5:
@@ -155,6 +159,7 @@ test.describe.parallel('Login', () => {
             //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
            // console.log('Erro do usuário visual_user: ' + erroMessage);
             await page.screenshot({path: "Evidencias/login/TiposDeUsuario/usuarioVisual.png"}); 
+            console.log("Tipo usuário 5 testado! \n");
             await navigationPage.saucedemo();  
             break;
 
