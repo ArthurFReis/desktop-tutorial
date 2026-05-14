@@ -17,8 +17,8 @@ test.describe.parallel('Login', () => {
      await pageResponsivoLogin(page);
      await navigationPage.userename.fill('standard_user');
      await navigationPage.password.fill('secret_sauce');
-     if ((await navigationPage.loginButton.isVisible()) && (await await navigationPage.loginButton.isEnabled())) {
-      await await navigationPage.loginButton.click();
+     if ((await navigationPage.loginButton.isVisible()) && (await navigationPage.loginButton.isEnabled())) {
+      await navigationPage.loginButton.click();
       await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html'); 
       await page.screenshot({path: "Evidencias/login/Correto/preenchimentoCorretoTotal.png"});
      } 
