@@ -1,5 +1,5 @@
 
-import { Page, expect, Locator, ScreenshotMode, GetByPlaceHolder } from '@playwright/test';
+import { Page, expect, Locator, GetByPlaceHolder } from '@playwright/test';
 export class NavegationPage {
     
     readonly page: Page;
@@ -13,9 +13,11 @@ export class NavegationPage {
 
     constructor(page: Page){
         this.page = page;
+        
         this.userename = this.page.locator('[data-test="username"]');
         this.password = this.page.locator('[data-test="password"]');
         this.loginButton = this.page.locator('[data-test="login-button"]');
+
         this.useario = this.page.getByPlaceholder('Username');
         this.senha = this.page.getByPlaceholder('Password');
 
