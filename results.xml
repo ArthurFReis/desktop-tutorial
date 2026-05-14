@@ -1,39 +1,10 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.695090000000084">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-14T09:50:42.017Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.575" errors="0">
-<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="2.575">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.940200000000186">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-14T11:06:10.173Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.018" errors="0">
+<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="2.018">
 <system-out>
-<![CDATA[É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
+<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Username is required
 ]]>
 </system-out>
 </testcase>

@@ -30,6 +30,7 @@ test.describe.parallel('Login', () => {
   });
 
     test('Teste usuarios testando o método limpar campos', async ({ page }) => {
+      let navigationPage = new NavegationPage(page);
       let errors = {"users": ["standard_user1", "stendard", ""], "senha": "secret_sauce"};
       for(const user in errors.users){
         await page.fill('input[placeholder="Username"]', errors.users[user]);
@@ -38,13 +39,13 @@ test.describe.parallel('Login', () => {
         let erroMessage = await page.locator('h3[data-test="error"]').innerText();
         console.log('Erros do método limpar campos: ', erroMessage);
         await page.screenshot({path: `Evidencias/login/TestandoUseuarios/Clean/usuarioErroClean-${errors.users[user]}.png`});
-        await page.getByPlaceholder('Username').clear();
-        await page.getByPlaceholder('Password').clear();
+        await navigationPage.useario.clear();
+        await navigationPage.senha.clear();
         await page.fill('input[placeholder="Username"]', errors.users[user]);
         await page.fill('input[placeholder="Password"]', errors.senha);
         await page.click('#login-button');
-        await page.getByPlaceholder('Username').clear();
-        await page.getByPlaceholder('Password').clear();
+        await navigationPage.useario.clear();
+        await navigationPage.senha.clear();
       }
   });
 
