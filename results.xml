@@ -1,99 +1,36 @@
-<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="22.327653000000005">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-14T19:09:11.224Z" hostname="chromium" tests="7" failures="0" skipped="0" time="19.01" errors="0">
-<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="4.718">
-<system-out>
-<![CDATA[É responsivo! 
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="33.449927999999375">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-15T18:14:44.634Z" hostname="chromium" tests="1" failures="1" skipped="0" time="30.035" errors="0">
+<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="30.035">
+<failure message="FrontEnd.spec.ts:140:7 Login tipos de usuário" type="FAILURE">
+<![CDATA[  [chromium] › tests\FrontEnd.spec.ts:140:7 › Login › Login tipos de usuário ───────────────────────
 
-======================================================================================================================== 
+    Test timeout of 30000ms exceeded.
 
-É responsivo! 
+    Error: locator.innerText: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('h3[data-test="error"]')
 
-======================================================================================================================== 
 
-É responsivo! 
+      161 |           await page.fill('input[placeholder="Password"]', "secret_sauce");
+      162 |           await page.click("#login-button");
+    > 163 |           let erroMessage1 = await page.locator('h3[data-test="error"]').innerText();
+          |                                                                          ^
+      164 |           console.log('Erro do usuário problem_user: ' + erroMessage1);
+      165 |           await page.screenshot({
+      166 |             path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png",
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\FrontEnd.spec.ts:163:74
 
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
+    Error Context: test-results\tests-FrontEnd-Login-Login-tipos-de-usuário-chromium\error-context.md
 ]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="2.16">
-<system-out>
-<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-Erros do método limpar campos:  Epic sadface: Username is required
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste usuarios testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.402">
-<system-out>
-<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-Erros do método refresh da página: Epic sadface: Username is required
-======================================================================================================================== 
-
-Começa os erros do password! 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste  password testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.167">
-<system-out>
-<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-Erros do método limpar campos:  Epic sadface: Password is required
-Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste password testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.448">
-<system-out>
-<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-Erros do método refresh da página: Epic sadface: Password is required
-Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-======================================================================================================================== 
-
-Começa os tipos de login! 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="6.911">
+</failure>
 <system-out>
 <![CDATA[Erro do usuário locked_out_user: Epic sadface: Sorry, this user has been locked out.
 Tipo usuário 1 testado! 
 
-Tipo usuário 2 testado! 
 
-Tipo usuário 3 testado! 
-
-Tipo usuário 4 testado! 
-
-Tipo usuário 5 testado! 
-
+[[ATTACHMENT|test-results\tests-FrontEnd-Login-Login-tipos-de-usuário-chromium\error-context.md]]
 ]]>
 </system-out>
-</testcase>
-<testcase name="Login › Logout" classname="tests\FrontEnd.spec.ts" time="1.204">
 </testcase>
 </testsuite>
 </testsuites>

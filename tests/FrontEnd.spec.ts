@@ -160,8 +160,8 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "problem_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-          //console.log('Erro do usuário problem_user: ' + erroMessage);
+          let erroMessage1 = await page.locator('h3[data-test="error"]').innerText();
+          console.log('Erro do usuário problem_user: ' + erroMessage1);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png",
           });
@@ -175,8 +175,8 @@ test.describe.parallel("Login", () => {
           );
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-          //console.log('Erro do usuário performance_glitch_user: ' + erroMessage);
+          let erroMessage2 = await page.locator('h3[data-test="error"]').innerText();
+          console.log('Erro do usuário performance_glitch_user: ' + erroMessage2);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioPerformanceGlitch.png",
           });
@@ -187,8 +187,8 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "error_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-          // console.log('Erro do usuário error_user: ' + erroMessage);
+          let erroMessage3 = await page.locator('h3[data-test="error"]').innerText();
+          console.log('Erro do usuário error_user: ' + erroMessage3);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioError.png",
           });
@@ -199,8 +199,8 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "visual_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          //let erroMessage = await page.locator('h3[data-test="error"]').innerText();
-          // console.log('Erro do usuário visual_user: ' + erroMessage);
+          let erroMessage4 = await page.locator('h3[data-test="error"]').innerText();
+          console.log('Erro do usuário visual_user: ' + erroMessage4);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioVisual.png",
           });
@@ -218,10 +218,9 @@ test.describe.parallel("Login", () => {
     await page.fill('input[placeholder="Username"]', "standard_user");
     await page.fill('input[placeholder="Password"]', "secret_sauce");
     await page.click("#login-button");
+    await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html")
     await page.click("#react-burger-menu-btn");
-    await page.screenshot({
-      path: "Evidencias/login/loginout/logoutBurger.png",
-    });
+    await page.screenshot({path: "Evidencias/login/loginout/logoutBurger.png"});
     await page.click("#logout_sidebar_link");
     await page.screenshot({ path: "Evidencias/login/loginout/logout.png" });
   });
