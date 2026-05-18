@@ -42,6 +42,9 @@ export async function pageResponsivoLogin(page: Page) {
         path: `Evidencias/login/Responsivo/Checkout/mobile-${tamanhos.nomes[tamanho]}.png`,
       });
     }
+    else{
+      console.log("URL não reconhecida para teste de responsividade.");
+    }
     console.log("É responsivo! \n");
     console.log(
       "======================================================================================================================== \n",
