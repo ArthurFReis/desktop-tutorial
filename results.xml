@@ -1,8 +1,14 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.610109000000172">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-18T11:40:30.937Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.723" errors="0">
-<testcase name="Login › Teste mo Inventory Pesquisar" classname="tests\FrontEnd.spec.ts" time="7.723">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.57544799999893">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-18T12:51:51.127Z" hostname="chromium" tests="1" failures="0" skipped="0" time="13.301" errors="0">
+<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="13.301">
 <system-out>
-<![CDATA[testado todos os tipos de pesquisa com sucesso! 
+<![CDATA[o carrirnho de compras está visível e habilitado! 
+
+
+ O valor do cart é: 6
+
+
+Todos os produtos foram adicionados com sucesso! 
 
 ]]>
 </system-out>
