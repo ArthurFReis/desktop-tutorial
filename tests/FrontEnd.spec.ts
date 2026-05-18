@@ -244,19 +244,19 @@ test.describe.parallel("Login", () => {
         switch (tiposPesquisa[i]) {
           case 1:
             await page.locator('select').selectOption('az');
-            await page.screenshot({path: `Evidencias/login/Inventory/tipoPesquisaAZ-${tiposPesquisa[i]}.png`});
+            await page.screenshot({path: `Evidencias/login/Inventory/Pesquisa/tipoPesquisaAZ-${tiposPesquisa[i]}.png`});
             break;
           case 2:
              await page.locator('select').selectOption('za');
-             await page.screenshot({ path: `Evidencias/login/Inventory/tipoPesquisaZA-${tiposPesquisa[i]}.png` });
+             await page.screenshot({ path: `Evidencias/login/Inventory/Pesquisa/tipoPesquisaZA-${tiposPesquisa[i]}.png` });
              break;
           case 3:
              await page.locator('select').selectOption('lohi');
-             await page.screenshot({ path: `Evidencias/login/Inventory/tipoPesquisaPriceCrescente-${tiposPesquisa[i]}.png` });
+             await page.screenshot({ path: `Evidencias/login/Inventory/Pesquisa/tipoPesquisaPriceCrescente-${tiposPesquisa[i]}.png` });
              break;
           case 4:
             await page.locator('select').selectOption('hilo');
-             await page.screenshot({ path: `Evidencias/login/Inventory/tipoPesquisaPriceDecrescente-${tiposPesquisa[i]}.png`  });
+             await page.screenshot({ path: `Evidencias/login/Inventory/Pesquisa/tipoPesquisaPriceDecrescente-${tiposPesquisa[i]}.png`  });
              break;
              default:
               console.log("Tipo de pesquisa inválida! \n");
@@ -358,11 +358,18 @@ test.describe.parallel("Login", () => {
 
       await page.click('.shopping_cart_link');
       await expect(page).toHaveURL("https://www.saucedemo.com/cart.html");
-      await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCartPage.png"}); 
+      await pageResponsivoLogin(page);
+      await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCartPageAntesRefresh.png"}); 
+      await page.reload();
+      await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCartPageDepoisRefresh.png"});
+
 
       await page.click('button[data-test="checkout"]');
       await expect(page).toHaveURL("https://www.saucedemo.com/checkout-step-one.html");
-      await page.screenshot({path: "Evidencias/inventory/Carrinho/checkout-step-one.html.png"});
+      await pageResponsivoLogin(page);
+      await page.screenshot({path: "Evidencias/inventory/Carrinho/checkout-step-one.htmlAntesRefresh.png"});
+      await page.reload();
+      await page.screenshot({path: "Evidencias/inventory/Carrinho/checkout-step-one.htmlDepoisRefresh.png"});
      
   });
 
