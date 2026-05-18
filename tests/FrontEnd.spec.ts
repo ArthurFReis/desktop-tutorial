@@ -359,6 +359,10 @@ test.describe.parallel("Login", () => {
       await page.click('.shopping_cart_link');
       await expect(page).toHaveURL("https://www.saucedemo.com/cart.html");
       await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCartPage.png"}); 
+
+      await page.click('button[data-test="checkout"]');
+      await expect(page).toHaveURL("https://www.saucedemo.com/checkout-step-one.html");
+      await page.screenshot({path: "Evidencias/inventory/Carrinho/checkout-step-one.html.png"});
      
   });
 

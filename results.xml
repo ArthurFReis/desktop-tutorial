@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.482771999999882">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-18T13:12:47.366Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.956" errors="0">
-<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="5.956">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.930771999999881">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-18T13:18:26.117Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.956" errors="0">
+<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="2.956">
 <system-out>
 <![CDATA[o carrirnho de compras está visível e habilitado! 
 
