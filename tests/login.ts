@@ -15,13 +15,31 @@ export async function pageResponsivoLogin(page: Page) {
       await page.screenshot({
         path: `Evidencias/login/Responsivo/Saucedemo/mobile-${tamanhos.nomes[tamanho]}.png`,
       });
-    } else {
+    } else if (page.url() === "https://www.saucedemo.com/inventory.html") {
       await page.setViewportSize({
         width: tamanhos.width[tamanho],
         height: tamanhos.height[tamanho],
       });
       await page.screenshot({
         path: `Evidencias/login/Responsivo/Inventory/mobile-${tamanhos.nomes[tamanho]}.png`,
+      });
+    }
+    else if (page.url() === "https://www.saucedemo.com/cart.html") {
+      await page.setViewportSize({
+        width: tamanhos.width[tamanho],
+        height: tamanhos.height[tamanho],
+      });
+      await page.screenshot({
+        path: `Evidencias/login/Responsivo/Cart/mobile-${tamanhos.nomes[tamanho]}.png`,
+      });
+    }
+    else if (page.url() === "https://www.saucedemo.com/checkout-step-one.html") {
+      await page.setViewportSize({
+        width: tamanhos.width[tamanho],
+        height: tamanhos.height[tamanho],
+      });
+      await page.screenshot({
+        path: `Evidencias/login/Responsivo/Checkout/mobile-${tamanhos.nomes[tamanho]}.png`,
       });
     }
     console.log("É responsivo! \n");

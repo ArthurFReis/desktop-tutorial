@@ -418,10 +418,8 @@ test.describe.parallel("Login", () => {
     } else {
       console.log("O carrinho de compras não está visível ou habilitado! \n");
     }
-
     await page.click(".shopping_cart_link");
     await expect(page).toHaveURL("https://www.saucedemo.com/cart.html");
-    await pageResponsivoLogin(page);
     await page.screenshot({
       path: "Evidencias/inventory/Carrinho/ProdutoCartPageAntesRefresh.png",
     });
@@ -429,12 +427,12 @@ test.describe.parallel("Login", () => {
     await page.screenshot({
       path: "Evidencias/inventory/Carrinho/ProdutoCartPageDepoisRefresh.png",
     });
+    await pageResponsivoLogin(page);
 
     await page.click('button[data-test="checkout"]');
     await expect(page).toHaveURL(
       "https://www.saucedemo.com/checkout-step-one.html",
     );
-    await pageResponsivoLogin(page);
     await page.screenshot({
       path: "Evidencias/inventory/Carrinho/checkout-step-one.htmlAntesRefresh.png",
     });
@@ -442,5 +440,6 @@ test.describe.parallel("Login", () => {
     await page.screenshot({
       path: "Evidencias/inventory/Carrinho/checkout-step-one.htmlDepoisRefresh.png",
     });
+    await pageResponsivoLogin(page);
   });
 });
