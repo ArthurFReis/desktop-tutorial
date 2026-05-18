@@ -279,27 +279,22 @@ test.describe.parallel("Login", () => {
         
       }
        let botaoAdicionar = [1, 2, 3, 4,5,6];
-       let coutShoppingCart = 0;
        let produto = [];
-       let botaoRemover = false;
-
+       
        for(let i = 0; i < botaoAdicionar.length; i++){
 
         switch (botaoAdicionar[i]) {
           case 1:
             await page.locator('#add-to-cart-sauce-labs-backpack').click();
             if ((await page.locator('#remove-sauce-labs-backpack').isVisible()) && (await page.locator('#remove-sauce-labs-backpack').isEnabled())) {
-            botaoRemover = true;
-            coutShoppingCart = 1;
             produto.push('Sauce Labs Backpack');
+            
             await page.screenshot({path: `Evidencias/login/Inventory/Adicionar/botãoBackpack-${botaoAdicionar[i]}.png`});
             }
             break;
           case 2:
              await page.locator('#add-to-cart-sauce-labs-bike-light').click();
               if ((await page.locator('#remove-sauce-labs-bike-light').isVisible()) && (await page.locator('#remove-sauce-labs-bike-light').isEnabled()))  {
-              botaoRemover = true;
-              coutShoppingCart = 1;
               produto.push('Sauce Labs Bike Light');
               await page.screenshot({ path: `Evidencias/login/Inventory/Adicionar/botãoBikeLight-${botaoAdicionar[i]}.png` });
               }
@@ -307,8 +302,6 @@ test.describe.parallel("Login", () => {
           case 3:
               await page.locator('#add-to-cart-sauce-labs-bolt-t-shirt').click();
               if ((await page.locator('#remove-sauce-labs-bolt-t-shirt').isVisible()) && (await page.locator('#remove-sauce-labs-bolt-t-shirt').isEnabled())) {
-              coutShoppingCart = 1;
-              botaoRemover = true;
               produto.push('Sauce Labs Bolt T-Shirt');
               await page.screenshot({ path: `Evidencias/login/Inventory/Adicionar/botãoBoltTShirt-${botaoAdicionar[i]}.png` });
              }
@@ -316,8 +309,6 @@ test.describe.parallel("Login", () => {
           case 4:
             await page.locator('#add-to-cart-sauce-labs-fleece-jacket').click();
             if((await page.locator('#remove-sauce-labs-fleece-jacket').isVisible()) && (await page.locator('#remove-sauce-labs-fleece-jacket').isEnabled())) {
-              coutShoppingCart = 1;
-              botaoRemover = true;
               produto.push('Sauce Labs Fleece Jacket');
              await page.screenshot({ path: `Evidencias/login/Inventory/Adicionar/botãoFleeceJacket-${botaoAdicionar[i]}.png`  });
             }
@@ -325,8 +316,6 @@ test.describe.parallel("Login", () => {
              case 5:
              await page.locator('button[data-test="add-to-cart-test.allthethings()-t-shirt-(red)"]').click();
              if ((await page.locator('button[data-test="remove-test.allthethings()-t-shirt-(red)"]').isVisible()) && (await page.locator('button[data-test="remove-test.allthethings()-t-shirt-(red)"]').isEnabled())) {
-              coutShoppingCart = 1;
-              botaoRemover = true;
               produto.push('Test.allthethings() T-Shirt (Red)');
              await page.screenshot({ path: `Evidencias/login/Inventory/Adicionar/botaoTShirtRed-${botaoAdicionar[i]}.png` });
              }
@@ -334,8 +323,6 @@ test.describe.parallel("Login", () => {
              case 6:
               await page.locator('#add-to-cart-sauce-labs-onesie').click();
               if ((await page.locator('#remove-sauce-labs-onesie').isVisible()) && (await page.locator('#remove-sauce-labs-onesie').isEnabled())) { 
-              coutShoppingCart = 1;
-              botaoRemover = true;
               produto.push('Sauce Labs Onesie');
               await page.screenshot({ path: `Evidencias/login/Inventory/Adicionar/botãoOnesie-${botaoAdicionar[i]}.png` });
               }
@@ -345,6 +332,7 @@ test.describe.parallel("Login", () => {
         }
         
       }
+      await page.hover('.shopping_cart_link');
       if ((await page.locator('.shopping_cart_badge').isVisible()) && (await page.locator('.shopping_cart_badge').isEnabled())) {
         console.log("o carrirnho de compras está visível e habilitado! \n");
 
@@ -352,11 +340,13 @@ test.describe.parallel("Login", () => {
         expect(cart).toBe(String(produto.length));
         console.log('\n O valor do cart é:', String(produto.length));
         console.log("\n")
-        await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCart.png"});
+        await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCartAntesRefresh.png"});
+        await page.reload();
 
         if (await page.locator('.shopping_cart_badge').innerText() === cart) {
-          //console.log("")
+          
           console.log("Todos os produtos foram adicionados com sucesso! \n");
+          await page.screenshot({path: "Evidencias/inventory/Carrinho/ProdutoCartDepoisRefresh.png"});
         }
         else {
           console.log("Nem todos os produtos foram adicionados! \n");
