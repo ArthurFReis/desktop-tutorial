@@ -146,10 +146,10 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "locked_out_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          let erroMessage = await page
+          let erroMessage1 = await page
             .locator('h3[data-test="error"]')
             .innerText();
-          console.log("Erro do usuário locked_out_user: " + erroMessage);
+          console.log("Erro do usuário locked_out_user: " + erroMessage1);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioLockedOut.png",
           });
@@ -159,10 +159,10 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "problem_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          let erroMessage1 = await page
+          let erroMessage2 = await page
             .locator('h3[data-test="error"]')
             .innerText();
-          console.log("Erro do usuário problem_user: " + erroMessage1);
+          console.log("Erro do usuário problem_user: " + erroMessage2);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png",
           });
@@ -176,11 +176,11 @@ test.describe.parallel("Login", () => {
           );
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          let erroMessage2 = await page
+          let erroMessage3 = await page
             .locator('h3[data-test="error"]')
             .innerText();
           console.log(
-            "Erro do usuário performance_glitch_user: " + erroMessage2,
+            "Erro do usuário performance_glitch_user: " + erroMessage3,
           );
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioPerformanceGlitch.png",
@@ -192,10 +192,10 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "error_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          let erroMessage3 = await page
+          let erroMessage4 = await page
             .locator('h3[data-test="error"]')
             .innerText();
-          console.log("Erro do usuário error_user: " + erroMessage3);
+          console.log("Erro do usuário error_user: " + erroMessage4);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioError.png",
           });
@@ -206,10 +206,10 @@ test.describe.parallel("Login", () => {
           await page.fill('input[placeholder="Username"]', "visual_user");
           await page.fill('input[placeholder="Password"]', "secret_sauce");
           await page.click("#login-button");
-          let erroMessage4 = await page
+          let erroMessage5 = await page
             .locator('h3[data-test="error"]')
             .innerText();
-          console.log("Erro do usuário visual_user: " + erroMessage4);
+          console.log("Erro do usuário visual_user: " + erroMessage5);
           await page.screenshot({
             path: "Evidencias/login/TiposDeUsuario/usuarioVisual.png",
           });

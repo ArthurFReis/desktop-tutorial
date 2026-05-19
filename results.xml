@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="9" failures="1" skipped="0" errors="0" time="35.426199000000956">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-18T16:17:03.188Z" hostname="chromium" tests="9" failures="1" skipped="0" time="28.061" errors="0">
-<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="4.581">
+<testsuites id="" name="" tests="9" failures="1" skipped="0" errors="0" time="29.069687999999964">
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-19T09:26:01.764Z" hostname="chromium" tests="9" failures="1" skipped="0" time="23.733" errors="0">
+<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="4.659">
 <system-out>
 <![CDATA[É responsivo! 
 
@@ -37,7 +37,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="2.379">
+<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.877">
 <system-out>
 <![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
 Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
@@ -45,7 +45,7 @@ Erros do método limpar campos:  Epic sadface: Username is required
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Teste usuarios testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.594">
+<testcase name="Login › Teste usuarios testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.356">
 <system-out>
 <![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
 Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
@@ -57,7 +57,7 @@ Começa os erros do password!
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Teste  password testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.274">
+<testcase name="Login › Teste  password testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.139">
 <system-out>
 <![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
 Erros do método limpar campos:  Epic sadface: Password is required
@@ -65,7 +65,7 @@ Erros do método limpar campos:  Epic sadface: Username and password do not matc
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Teste password testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.809">
+<testcase name="Login › Teste password testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.408">
 <system-out>
 <![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
 Erros do método refresh da página: Epic sadface: Password is required
@@ -77,7 +77,7 @@ Começa os tipos de login!
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="6.458">
+<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="4.492">
 <failure message="FrontEnd.spec.ts:139:7 Login tipos de usuário" type="FAILURE">
 <![CDATA[  [chromium] › tests\FrontEnd.spec.ts:139:7 › Login › Login tipos de usuário ───────────────────────
 
@@ -103,16 +103,16 @@ Tipo usuário 1 testado!
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Logout" classname="tests\FrontEnd.spec.ts" time="3.97">
+<testcase name="Login › Logout" classname="tests\FrontEnd.spec.ts" time="3.808">
 </testcase>
-<testcase name="Login › Teste no inventory pesquisar" classname="tests\FrontEnd.spec.ts" time="1.417">
+<testcase name="Login › Teste no inventory pesquisar" classname="tests\FrontEnd.spec.ts" time="0.982">
 <system-out>
 <![CDATA[testado todos os tipos de pesquisa com sucesso! 
 
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="4.579">
+<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="4.012">
 <system-out>
 <![CDATA[o carrirnho de compras está visível e habilitado! 
 
