@@ -16,12 +16,14 @@ test.describe.parallel("API com paralelo", () => {
           const response3 = await request.get(`${site}/banks/v1/1`);
           console.log(response3.status());
           expect(response3.status()).toBe(200);
+          const responsebody1 = JSON.parse(await response3.text());
+          console.log("\n Json do case 2: \n", responsebody1);
           break;
         case 3:
           const response4 = await request.get(`${site}/cep/v1/89010025`);
           expect(response4.status()).toBe(200);
-          const responsebody = JSON.parse(await response4.text());
-          console.log(responsebody);
+          const responsebody2 = JSON.parse(await response4.text());
+          console.log("\n Json do case 3: \n", responsebody2);
           break;
 
         default:

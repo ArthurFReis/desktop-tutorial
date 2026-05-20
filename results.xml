@@ -1,15 +1,26 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.570771999999881">
-<testsuite name="tests\BackEndBrasilAPI.spec.ts" timestamp="2026-05-20T13:09:35.676Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.429" errors="0">
-<testcase name="API com paralelo › Teste de dados diferentes" classname="tests\BackEndBrasilAPI.spec.ts" time="1.429">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.2038739999998365">
+<testsuite name="tests\BackEndBrasilAPI.spec.ts" timestamp="2026-05-20T13:30:50.643Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.208" errors="0">
+<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEndBrasilAPI.spec.ts" time="1.208">
 <system-out>
-<![CDATA[O status de cada requisição é: 200
-O status de cada requisição é: 400
-O status de cada requisição é: 400
-O status de cada requisição é: 400
-O status de cada requisição é: 400
-O status de cada requisição é: 400
+<![CDATA[[33m200[39m
 
+ Json do case 2: 
+ {
+  ispb: [32m'00000000'[39m,
+  name: [32m'BCO DO BRASIL S.A.'[39m,
+  code: [33m1[39m,
+  fullName: [32m'Banco do Brasil S.A.'[39m
+}
 
+ Json do case 3: 
+ {
+  cep: [32m'89010025'[39m,
+  state: [32m'SC'[39m,
+  city: [32m'Blumenau'[39m,
+  neighborhood: [32m'Centro'[39m,
+  street: [32m'Rua Doutor Luiz de Freitas Melro'[39m,
+  service: [32m'open-cep'[39m
+}
 ]]>
 </system-out>
 </testcase>
