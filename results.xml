@@ -1,161 +1,90 @@
-<testsuites id="" name="" tests="9" failures="1" skipped="0" errors="0" time="29.069687999999964">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-19T09:26:01.764Z" hostname="chromium" tests="9" failures="1" skipped="0" time="23.733" errors="0">
-<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="4.659">
-<system-out>
-<![CDATA[É responsivo! 
+<testsuites id="" name="" tests="5" failures="4" skipped="0" errors="0" time="11.317967999999878">
+<testsuite name="tests\BackEndSoucedemoAPI.spec.ts" timestamp="2026-05-20T09:48:47.830Z" hostname="chromium" tests="5" failures="4" skipped="0" time="3.575" errors="0">
+<testcase name="API com paralelo › Login correto metodo errado" classname="tests\BackEndSoucedemoAPI.spec.ts" time="1.149">
+<failure message="BackEndSoucedemoAPI.spec.ts:4:7 Login correto metodo errado" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:4:7 › API com paralelo › Login correto metodo errado 
 
-======================================================================================================================== 
+    Error: expect(received).toBe(expected) // Object.is equality
 
-É responsivo! 
+    Expected: 200
+    Received: 405
 
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.877">
-<system-out>
-<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-Erros do método limpar campos:  Epic sadface: Username is required
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste usuarios testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.356">
-<system-out>
-<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-Erros do método refresh da página: Epic sadface: Username is required
-======================================================================================================================== 
-
-Começa os erros do password! 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste  password testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.139">
-<system-out>
-<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-Erros do método limpar campos:  Epic sadface: Password is required
-Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Teste password testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.408">
-<system-out>
-<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-Erros do método refresh da página: Epic sadface: Password is required
-Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
-======================================================================================================================== 
-
-Começa os tipos de login! 
-
-]]>
-</system-out>
-</testcase>
-<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="4.492">
-<failure message="FrontEnd.spec.ts:139:7 Login tipos de usuário" type="FAILURE">
-<![CDATA[  [chromium] › tests\FrontEnd.spec.ts:139:7 › Login › Login tipos de usuário ───────────────────────
-
-    Error: locator.innerText: Target page, context or browser has been closed
-    Call log:
-      - waiting for locator('h3[data-test="error"]')
-
-
-      162 |           let erroMessage1 = await page
-      163 |             .locator('h3[data-test="error"]')
-    > 164 |             .innerText();
-          |              ^
-      165 |           console.log("Erro do usuário problem_user: " + erroMessage1);
-      166 |           await page.screenshot({
-      167 |             path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png",
-        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\FrontEnd.spec.ts:164:14
+       9 |       },
+      10 |     });
+    > 11 |     expect(response.status()).toBe(200);
+         |                               ^
+      12 |     console.log("Login correto, status: ", response.status());
+      13 |   });
+      14 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:11:31
 ]]>
 </failure>
+</testcase>
+<testcase name="API com paralelo › Login correto" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.61">
 <system-out>
-<![CDATA[Erro do usuário locked_out_user: Epic sadface: Sorry, this user has been locked out.
-Tipo usuário 1 testado! 
-
+<![CDATA[Login correto, status:  [33m200[39m
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login › Logout" classname="tests\FrontEnd.spec.ts" time="3.808">
-</testcase>
-<testcase name="Login › Teste no inventory pesquisar" classname="tests\FrontEnd.spec.ts" time="0.982">
-<system-out>
-<![CDATA[testado todos os tipos de pesquisa com sucesso! 
+<testcase name="API com paralelo › Login Erro de status" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.883">
+<failure message="BackEndSoucedemoAPI.spec.ts:26:7 Login Erro de status" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:26:7 › API com paralelo › Login Erro de status ────
 
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      31 |       },
+      32 |     });
+    > 33 |     expect(response.status()).toBe(400);
+         |                               ^
+      34 |     console.log("Login erro de status, status: ", response.status());
+      35 |   });
+      36 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:33:31
 ]]>
-</system-out>
+</failure>
 </testcase>
-<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="4.012">
-<system-out>
-<![CDATA[o carrirnho de compras está visível e habilitado! 
+<testcase name="API com paralelo › Login erro de usuário" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.452">
+<failure message="BackEndSoucedemoAPI.spec.ts:37:7 Login erro de usuário" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:37:7 › API com paralelo › Login erro de usuário ───
 
+    Error: expect(received).toBe(expected) // Object.is equality
 
- O valor do cart é: 6
+    Expected: 403
+    Received: 200
 
-
-Todos os produtos foram adicionados com sucesso! 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
-É responsivo! 
-
-======================================================================================================================== 
-
+      42 |       },
+      43 |     });
+    > 44 |     expect(response.status()).toBe(403);
+         |                               ^
+      45 |     console.log("Login erro de usuário, status: ", response.status());
+      46 |   });
+      47 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:44:31
 ]]>
-</system-out>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Login erro de password" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.481">
+<failure message="BackEndSoucedemoAPI.spec.ts:48:7 Login erro de password" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:48:7 › API com paralelo › Login erro de password ──
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 403
+    Received: 200
+
+      53 |       },
+      54 |     });
+    > 55 |     expect(response.status()).toBe(403);
+         |                               ^
+      56 |     console.log("Login erro de password, status: ", response.status());
+      57 |   });
+      58 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:55:31
+]]>
+</failure>
 </testcase>
 </testsuite>
 </testsuites>
