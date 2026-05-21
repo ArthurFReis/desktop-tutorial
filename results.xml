@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.2038739999998365">
-<testsuite name="tests\BackEndBrasilAPI.spec.ts" timestamp="2026-05-20T13:30:50.643Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.208" errors="0">
-<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEndBrasilAPI.spec.ts" time="1.208">
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="11.257632999999988">
+<testsuite name="tests\BackEndBrasilAPI.spec.ts" timestamp="2026-05-21T11:06:21.344Z" hostname="chromium" tests="3" failures="1" skipped="0" time="4.706" errors="0">
+<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEndBrasilAPI.spec.ts" time="1.681">
 <system-out>
 <![CDATA[[33m200[39m
 
@@ -21,6 +21,39 @@
   street: [32m'Rua Doutor Luiz de Freitas Melro'[39m,
   service: [32m'open-cep'[39m
 }
+]]>
+</system-out>
+</testcase>
+<testcase name="API com paralelo › Bancos em geral a validação errada" classname="tests\BackEndBrasilAPI.spec.ts" time="0.61">
+<failure message="BackEndBrasilAPI.spec.ts:36:7 Bancos em geral a validação errada" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndBrasilAPI.spec.ts:36:7 › API com paralelo › Bancos em geral a validação errada 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      37 |     const site = "https://brasilapi.com.br/api";
+      38 |     const response = await request.get(`${site}/banks/v1`);
+    > 39 |     await expect(response.status()).toBe(400);
+         |                                     ^
+      40 |   });
+      41 |
+      42 |   test("Teste de dados diferentes", async ({ request, page }) => {
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndBrasilAPI.spec.ts:39:37
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Teste de dados diferentes" classname="tests\BackEndBrasilAPI.spec.ts" time="2.415">
+<system-out>
+<![CDATA[O status de cada requisição é: 200
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+
+
 ]]>
 </system-out>
 </testcase>

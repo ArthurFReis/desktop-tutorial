@@ -9,19 +9,19 @@ test.describe.parallel("API com paralelo", () => {
       switch (tiposTest[i]) {
         case 1:
           const response = await request.get(`${site}/banks/v1`);
-          expect(response.status()).toBe(200);
+           await expect(response.status()).toBe(200);
           break;
 
         case 2:
           const response3 = await request.get(`${site}/banks/v1/1`);
           console.log(response3.status());
-          expect(response3.status()).toBe(200);
+          await expect(response3.status()).toBe(200);
           const responsebody1 = JSON.parse(await response3.text());
           console.log("\n Json do case 2: \n", responsebody1);
           break;
         case 3:
           const response4 = await request.get(`${site}/cep/v1/89010025`);
-          expect(response4.status()).toBe(200);
+          await expect(response4.status()).toBe(200);
           const responsebody2 = JSON.parse(await response4.text());
           console.log("\n Json do case 3: \n", responsebody2);
           break;
@@ -36,7 +36,7 @@ test.describe.parallel("API com paralelo", () => {
   test("Bancos em geral a validação errada", async ({ request, page }) => {
     const site = "https://brasilapi.com.br/api";
     const response = await request.get(`${site}/banks/v1`);
-    expect(response.status()).toBe(400);
+    await expect(response.status()).toBe(400);
   });
 
   test("Teste de dados diferentes", async ({ request, page }) => {

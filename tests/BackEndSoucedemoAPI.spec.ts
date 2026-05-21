@@ -8,7 +8,7 @@ test.describe.parallel("API com paralelo", () => {
         Password: "secret_sauce",
       },
     });
-    expect(response.status()).toBe(200);
+    await expect(response.status()).toBe(200);
     console.log("Login correto, status: ", response.status());
   });
 
@@ -19,7 +19,7 @@ test.describe.parallel("API com paralelo", () => {
         Password: "secret_sauce",
       },
     });
-    expect(response.status()).toBe(200);
+    await expect(response.status()).toBe(200);
     console.log("Login correto, status: ", response.status());
   });
 
@@ -30,7 +30,7 @@ test.describe.parallel("API com paralelo", () => {
         Password: "secret_sauce",
       },
     });
-    expect(response.status()).toBe(400);
+    await expect(response.status()).toBe(400);
     console.log("Login erro de status, status: ", response.status());
   });
 
@@ -41,7 +41,7 @@ test.describe.parallel("API com paralelo", () => {
         Password: "secret_sauce",
       },
     });
-    expect(response.status()).toBe(403);
+    await expect(response.status()).toBe(403);
     console.log("Login erro de usuário, status: ", response.status());
   });
 
@@ -52,14 +52,14 @@ test.describe.parallel("API com paralelo", () => {
         Password: "secret_sauce1",
       },
     });
-    expect(response.status()).toBe(403);
+    await expect(response.status()).toBe(403);
     console.log("Login erro de password, status: ", response.status());
   });
 
  test("Inventory teste", async ({ request, page }) => {
     const site = "https://www.saucedemo.com";
     const response = await request.get(`${site}/inventory.html`);
-    expect(response.status()).toBe(200);
+    await expect(response.status()).toBe(200);
   });
 
 });
