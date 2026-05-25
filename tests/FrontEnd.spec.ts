@@ -34,11 +34,13 @@ test.describe.parallel("Login", () => {
     let navigationPage = new NavegationPage(page);
     let errors = {
       users: ["standard_user1", "stendard", ""],
-      senha: "secret_sauce",
+      senha_correta: "secret_sauce",
+      senha_incorreta: ["secret_sauce1", "", "secret"]
     };
     for (const user in errors.users) {
       await page.fill('input[placeholder="Username"]', errors.users[user]);
-      await page.fill('input[placeholder="Password"]', errors.senha);
+      await page.fill('input[placeholder="Password"]', errors.senha_correta);
+      await page.fill('input[placeholder="Password"]', errors.senha_incorreta[user]);
       await page.click("#login-button");
       let erroMessage = await page.locator('h3[data-test="error"]').innerText();
       console.log("Erros do método limpar campos: ", erroMessage);
@@ -48,7 +50,8 @@ test.describe.parallel("Login", () => {
       await navigationPage.useario.clear();
       await navigationPage.senha.clear();
       await page.fill('input[placeholder="Username"]', errors.users[user]);
-      await page.fill('input[placeholder="Password"]', errors.senha);
+      await page.fill('input[placeholder="Password"]', errors.senha_correta);
+      await page.fill('input[placeholder="Password"]', errors.senha_incorreta[user]);
       await page.click("#login-button");
       await navigationPage.useario.clear();
       await navigationPage.senha.clear();
@@ -60,11 +63,13 @@ test.describe.parallel("Login", () => {
   }) => {
     let errors = {
       users: ["standard_user1", "stendard", ""],
-      senha: "secret_sauce",
+      senha_correta: "secret_sauce",
+      senha_incorretos: ["secret_sauce1", "", "secret"]
     };
     for (const user in errors.users) {
       await page.fill('input[placeholder="Username"]', errors.users[user]);
-      await page.fill('input[placeholder="Password"]', errors.senha);
+      await page.fill('input[placeholder="Password"]', errors.senha_correta);
+      await page.fill('input[placeholder="Password"]', errors.senha_incorretos[user]);
       await page.click("#login-button");
       let erroMessage = await page.locator('h3[data-test="error"]').innerText();
       console.log("Erros do método refresh da página: " + erroMessage);
@@ -73,7 +78,8 @@ test.describe.parallel("Login", () => {
       });
       await page.reload();
       await page.fill('input[placeholder="Username"]', errors.users[user]);
-      await page.fill('input[placeholder="Password"]', errors.senha);
+      await page.fill('input[placeholder="Password"]', errors.senha_correta);
+      await page.fill('input[placeholder="Password"]', errors.senha_incorretos[user]);
       await page.click("#login-button");
       await page.reload();
     }
@@ -87,11 +93,13 @@ test.describe.parallel("Login", () => {
   test("Teste  password testando o método limpar campos", async ({ page }) => {
     let errors = {
       password: ["secret_sauce1", "", "secret"],
-      user: "standard_user",
+      user_correto: "standard_user",
+      user_incorreto: ["standard_user1", "stendard", ""]
     };
     for (const user in errors.password) {
-      await page.fill('input[placeholder="Username"]', errors.user);
+      await page.fill('input[placeholder="Username"]', errors.user_correto);
       await page.fill('input[placeholder="Password"]', errors.password[user]);
+      await page.fill('input[placeholder="Username"]', errors.user_incorreto[user]);
       await page.click("#login-button");
       let erroMessage = await page.locator('h3[data-test="error"]').innerText();
       console.log("Erros do método limpar campos: ", erroMessage);
@@ -100,8 +108,9 @@ test.describe.parallel("Login", () => {
       });
       await page.getByPlaceholder("Username").clear();
       await page.getByPlaceholder("Password").clear();
-      await page.fill('input[placeholder="Username"]', errors.user);
+      await page.fill('input[placeholder="Username"]', errors.user_correto);
       await page.fill('input[placeholder="Password"]', errors.password[user]);
+      await page.fill('input[placeholder="Username"]', errors.user_incorreto[user]);
       await page.click("#login-button");
       await page.getByPlaceholder("Username").clear();
       await page.getByPlaceholder("Password").clear();
@@ -113,11 +122,13 @@ test.describe.parallel("Login", () => {
   }) => {
     let errors = {
       password: ["secret_sauce1", "", "secret"],
-      user: "standard_user",
+      user_correto: "standard_user",
+      user_incorreto: ["standard_user1", "stendard", ""]
     };
     for (const user in errors.password) {
-      await page.fill('input[placeholder="Username"]', errors.user);
+      await page.fill('input[placeholder="Username"]', errors.user_correto);
       await page.fill('input[placeholder="Password"]', errors.password[user]);
+      await page.fill('input[placeholder="Username"]', errors.user_incorreto[user]);
       await page.click("#login-button");
       let erroMessage = await page.locator('h3[data-test="error"]').innerText();
       console.log("Erros do método refresh da página: " + erroMessage);
@@ -125,8 +136,9 @@ test.describe.parallel("Login", () => {
         path: `Evidencias/login/TestandoPassword/Refresh/usuarioErroRefresh-${errors.password[user]}.png`,
       });
       await page.reload();
-      await page.fill('input[placeholder="Username"]', errors.user);
+      await page.fill('input[placeholder="Username"]', errors.user_correto);
       await page.fill('input[placeholder="Password"]', errors.password[user]);
+      await page.fill('input[placeholder="Username"]', errors.user_incorreto[user]);
       await page.click("#login-button");
       await page.reload();
     }
