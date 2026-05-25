@@ -6,7 +6,7 @@ export async function pageResponsivoLogin(page: Page) {
     width: [375, 414, 390, 430],
     height: [667, 896, 844, 932],
   };
-  for (const tamanho in tamanhos.width) {
+  for (let tamanho in tamanhos.width) {
     if (page.url() === "https://www.saucedemo.com/") {
       await page.setViewportSize({
         width: tamanhos.width[tamanho],
