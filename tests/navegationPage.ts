@@ -6,6 +6,8 @@ export class NavegationPage {
   readonly userename: Locator;
   readonly password: Locator;
   readonly loginButton: Locator;
+  readonly removeButton: Locator;
+  readonly shoppingCart: Locator;
 
   readonly useario: GetByPlaceHolder;
   readonly senha: GetByPlaceHolder;
@@ -16,7 +18,8 @@ export class NavegationPage {
     this.userename = this.page.locator('[data-test="username"]');
     this.password = this.page.locator('[data-test="password"]');
     this.loginButton = this.page.locator('[data-test="login-button"]');
-
+    this.removeButton = this.page.locator('[data-test="remove-button"]');
+    this.shoppingCart = this.page.locator('.shopping_cart_link');
     this.useario = this.page.getByPlaceholder("Username");
     this.senha = this.page.getByPlaceholder("Password");
   }
