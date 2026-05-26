@@ -1,6 +1,285 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.561649000000209">
-<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-26T18:20:08.353Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.862" errors="0">
-<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="7.862">
+<testsuites id="" name="" tests="18" failures="7" skipped="0" errors="0" time="44.01948000000045">
+<testsuite name="tests\BackEndBrasilAPI.spec.ts" timestamp="2026-05-26T18:52:54.974Z" hostname="chromium" tests="3" failures="1" skipped="0" time="2.206" errors="0">
+<testcase name="API com paralelo › tipos de teste de backend" classname="tests\BackEndBrasilAPI.spec.ts" time="0.645">
+<system-out>
+<![CDATA[[33m200[39m
+
+ Json do case 2: 
+ {
+  ispb: [32m'00000000'[39m,
+  name: [32m'BCO DO BRASIL S.A.'[39m,
+  code: [33m1[39m,
+  fullName: [32m'Banco do Brasil S.A.'[39m
+}
+
+ Json do case 3: 
+ {
+  cep: [32m'89010025'[39m,
+  state: [32m'SC'[39m,
+  city: [32m'Blumenau'[39m,
+  neighborhood: [32m'Centro'[39m,
+  street: [32m'Rua Doutor Luiz de Freitas Melro'[39m,
+  service: [32m'open-cep'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="API com paralelo › Bancos em geral a validação errada" classname="tests\BackEndBrasilAPI.spec.ts" time="0.227">
+<failure message="BackEndBrasilAPI.spec.ts:36:7 Bancos em geral a validação errada" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndBrasilAPI.spec.ts:36:7 › API com paralelo › Bancos em geral a validação errada 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      37 |     const site = "https://brasilapi.com.br/api";
+      38 |     const response = await request.get(`${site}/banks/v1`);
+    > 39 |     await expect(response.status()).toBe(400);
+         |                                     ^
+      40 |   });
+      41 |
+      42 |   test("Teste de dados diferentes", async ({ request, page }) => {
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndBrasilAPI.spec.ts:39:37
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Teste de dados diferentes" classname="tests\BackEndBrasilAPI.spec.ts" time="1.334">
+<system-out>
+<![CDATA[O status de cada requisição é: 200
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+O status de cada requisição é: 400
+
+
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\BackEndSoucedemoAPI.spec.ts" timestamp="2026-05-26T18:52:54.974Z" hostname="chromium" tests="6" failures="5" skipped="0" time="1.188" errors="0">
+<testcase name="API com paralelo › Login correto metodo errado" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.158">
+<failure message="BackEndSoucedemoAPI.spec.ts:4:7 Login correto metodo errado" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:4:7 › API com paralelo › Login correto metodo errado 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 405
+
+       9 |       },
+      10 |     });
+    > 11 |     await expect(response.status()).toBe(200);
+         |                                     ^
+      12 |     console.log("Login correto, status: ", response.status());
+      13 |   });
+      14 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:11:37
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Login correto" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.177">
+<system-out>
+<![CDATA[Login correto, status:  [33m200[39m
+]]>
+</system-out>
+</testcase>
+<testcase name="API com paralelo › Login Erro de status" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.11">
+<failure message="BackEndSoucedemoAPI.spec.ts:26:7 Login Erro de status" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:26:7 › API com paralelo › Login Erro de status ────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 200
+
+      31 |       },
+      32 |     });
+    > 33 |     await expect(response.status()).toBe(400);
+         |                                     ^
+      34 |     console.log("Login erro de status, status: ", response.status());
+      35 |   });
+      36 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:33:37
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Login erro de usuário" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.223">
+<failure message="BackEndSoucedemoAPI.spec.ts:37:7 Login erro de usuário" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:37:7 › API com paralelo › Login erro de usuário ───
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 403
+    Received: 200
+
+      42 |       },
+      43 |     });
+    > 44 |     await expect(response.status()).toBe(403);
+         |                                     ^
+      45 |     console.log("Login erro de usuário, status: ", response.status());
+      46 |   });
+      47 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:44:37
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Login erro de password" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.301">
+<failure message="BackEndSoucedemoAPI.spec.ts:48:7 Login erro de password" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:48:7 › API com paralelo › Login erro de password ──
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 403
+    Received: 200
+
+      53 |       },
+      54 |     });
+    > 55 |     await expect(response.status()).toBe(403);
+         |                                     ^
+      56 |     console.log("Login erro de password, status: ", response.status());
+      57 |   });
+      58 |
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:55:37
+]]>
+</failure>
+</testcase>
+<testcase name="API com paralelo › Inventory teste" classname="tests\BackEndSoucedemoAPI.spec.ts" time="0.219">
+<failure message="BackEndSoucedemoAPI.spec.ts:59:6 Inventory teste" type="FAILURE">
+<![CDATA[  [chromium] › tests\BackEndSoucedemoAPI.spec.ts:59:6 › API com paralelo › Inventory teste ─────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      60 |     const site = "https://www.saucedemo.com";
+      61 |     const response = await request.get(`${site}/inventory.html`);
+    > 62 |     await expect(response.status()).toBe(200);
+         |                                     ^
+      63 |   });
+      64 |
+      65 | });
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\BackEndSoucedemoAPI.spec.ts:62:37
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="tests\FrontEnd.spec.ts" timestamp="2026-05-26T18:52:54.974Z" hostname="chromium" tests="9" failures="1" skipped="0" time="23.35" errors="0">
+<testcase name="Login › Teste de preenchimento correto" classname="tests\FrontEnd.spec.ts" time="2.767">
+<system-out>
+<![CDATA[É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+É responsivo! 
+
+======================================================================================================================== 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste usuarios testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="2.156">
+<system-out>
+<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Password is required
+Erros do método limpar campos:  Epic sadface: Username is required
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste usuarios testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="1.934">
+<system-out>
+<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
+Erros do método refresh da página: Epic sadface: Password is required
+Erros do método refresh da página: Epic sadface: Username is required
+======================================================================================================================== 
+
+Começa os erros do password! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste  password testando o método limpar campos" classname="tests\FrontEnd.spec.ts" time="1.677">
+<system-out>
+<![CDATA[Erros do método limpar campos:  Epic sadface: Username and password do not match any user in this service
+Erros do método limpar campos:  Epic sadface: Password is required
+Erros do método limpar campos:  Epic sadface: Username is required
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste password testando o método refresh da página" classname="tests\FrontEnd.spec.ts" time="2.489">
+<system-out>
+<![CDATA[Erros do método refresh da página: Epic sadface: Username and password do not match any user in this service
+Erros do método refresh da página: Epic sadface: Password is required
+Erros do método refresh da página: Epic sadface: Username is required
+======================================================================================================================== 
+
+Começa os tipos de login! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Login tipos de usuário" classname="tests\FrontEnd.spec.ts" time="2.685">
+<failure message="FrontEnd.spec.ts:151:7 Login tipos de usuário" type="FAILURE">
+<![CDATA[  [chromium] › tests\FrontEnd.spec.ts:151:7 › Login › Login tipos de usuário ───────────────────────
+
+    Error: locator.innerText: Target page, context or browser has been closed
+    Call log:
+      - waiting for locator('h3[data-test="error"]')
+
+
+      174 |            erroMessage = await page
+      175 |             .locator('h3[data-test="error"]')
+    > 176 |             .innerText();
+          |              ^
+      177 |           console.log("Erro do usuário problem_user: " + erroMessage);
+      178 |           await page.screenshot({
+      179 |             path: "Evidencias/login/TiposDeUsuario/usuarioProblem.png",
+        at C:\Users\013772631\OneDrive - IBM\Desktop\QA_Reskill\Projeto QA\tests\FrontEnd.spec.ts:176:14
+]]>
+</failure>
+<system-out>
+<![CDATA[Erro do usuário locked_out_user: Epic sadface: Sorry, this user has been locked out.
+Tipo usuário 1 testado! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Logout" classname="tests\FrontEnd.spec.ts" time="3.894">
+</testcase>
+<testcase name="Login › Teste no inventory pesquisar" classname="tests\FrontEnd.spec.ts" time="1.51">
+<system-out>
+<![CDATA[testado todos os tipos de pesquisa com sucesso! 
+
+]]>
+</system-out>
+</testcase>
+<testcase name="Login › Teste no inventory adicionar produto" classname="tests\FrontEnd.spec.ts" time="4.238">
 <system-out>
 <![CDATA[o carrirnho de compras está visível e habilitado! 
 
